@@ -41,7 +41,7 @@ public class Login extends HttpServlet {
 		// TODO Auto-generated method stub
 		String user_name = request.getParameter("uname");
 		session = request.getSession(true);
-		session.setAttribute("username1", user_name);
+		session.setAttribute("username", user_name);
 		response.sendRedirect("Home.jsp");
 	}
 

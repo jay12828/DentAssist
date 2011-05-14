@@ -1,0 +1,30 @@
+[1mdiff --git a/WebContent/Home.jsp b/WebContent/Home.jsp[m
+[1mindex f5bfe81..77124f5 100644[m
+[1m--- a/WebContent/Home.jsp[m
+[1m+++ b/WebContent/Home.jsp[m
+[36m@@ -7,7 +7,7 @@[m
+ <title>Home</title>[m
+ </head>[m
+ <body>[m
+[31m-Welcome Home , <%= session.getAttribute("username") %>[m
+[32m+[m[32mWelcome Home , <%= session.getAttribute("username1") %>[m
+ [m
+ </body>[m
+ </html>[m
+\ No newline at end of file[m
+[1mdiff --git a/WebContent/WEB-INF/classes/Servlets/Login/Login.class b/WebContent/WEB-INF/classes/Servlets/Login/Login.class[m
+[1mindex 8887c10..df25f67 100644[m
+Binary files a/WebContent/WEB-INF/classes/Servlets/Login/Login.class and b/WebContent/WEB-INF/classes/Servlets/Login/Login.class differ
+[1mdiff --git a/src/Servlets/Login/Login.java b/src/Servlets/Login/Login.java[m
+[1mindex 1942529..3a6a7ba 100644[m
+[1m--- a/src/Servlets/Login/Login.java[m
+[1m+++ b/src/Servlets/Login/Login.java[m
+[36m@@ -41,7 +41,7 @@[m [mpublic class Login extends HttpServlet {[m
+ 		// TODO Auto-generated method stub[m
+ 		String user_name = request.getParameter("uname");[m
+ 		session = request.getSession(true);[m
+[31m-		session.setAttribute("username", user_name);[m
+[32m+[m		[32msession.setAttribute("username1", user_name);[m
+ 		response.sendRedirect("Home.jsp");[m
+ 	}[m
+ [m
