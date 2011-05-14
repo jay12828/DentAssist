@@ -7,7 +7,7 @@
 <title>Home</title>
 </head>
 <body>
-Welcome Home , <%= session.getAttribute("username") %>
+Welcome Home , <%= session.getAttribute("username1") %>
 
 </body>
 </html>
