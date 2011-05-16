@@ -1,0 +1,11 @@
+create table mine.Registration (
+	Username varchar(100) primary key,
+	Password varchar(20),
+	First_Name varchar(50),
+	Last_Name varchar(50)
+)
+
+insert into mine.REGISTRATION values ('admin','admin','Jaydeep','Chakrabarty');
+insert into mine.REGISTRATION values ('user','user','Anindita','Chakrabarty')
+
+select * from MINE.REGISTRATION;
