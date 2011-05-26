@@ -34,14 +34,8 @@ body {
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <table width="348" border="0" class="login_table_inner" align="right">
+
+  <table width="348" border="0" class="login_table_inner" align="center">
   <tr>
     <td width="72" height="27"></td>
     <td width="84">&nbsp;</td>

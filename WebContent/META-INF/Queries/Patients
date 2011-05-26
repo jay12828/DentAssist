@@ -1,0 +1,22 @@
+create table mine.Patients_details(
+	patient_id  varchar(40) primary key,
+	First_Name  varchar(40),
+	Last_name  varchar(40),
+	street_name varchar(100),
+	house_no varchar(20),
+	state varchar(20),
+	city varchar(20),
+	pin varchar(10),
+	gender varchar(10),
+	marital_status varchar(20),
+	date_of_birth date,
+	home_phone varchar(20),
+	mobile varchar(20),
+	email varchar(50)
+)
+
+insert into MINE.PATIENTS_DETAILS values ('admin12121985','Admin','Chakrabarty','Old Airport Road','N-11','Karnataka','Bangalore','560008','Male','Married','1985-06-24','123456','789651','admin@admin.com')
+
+insert into MINE.PATIENTS_DETAILS values ('user12121984','User','Chakrabarty','Old Airport Road','L-16','Karnataka','Bangalore','560008','Female','Married','1984-05-19','1111111','2222222','user@user.com')
+
+select * from MINE.PATIENTS_DETAILS

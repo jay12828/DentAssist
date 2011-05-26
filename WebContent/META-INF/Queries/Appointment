@@ -1,0 +1,7 @@
+create table mine.Appointments (
+	app_id varchar(100) primary key,
+	patient_id varchar(20),
+	appointment_date date,
+	appointment_time time,
+	treatment_summary varchar(100)
+);
