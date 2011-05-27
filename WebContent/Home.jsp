@@ -5,38 +5,32 @@
 <html>
 <head>
 <style type="text/css">
-.header_link {
-	font-family: Georgia, "Times New Roman", Times, serif;
-	font-size: 18px;
-	color: #FFF;
+.header_link{
+
+
 }
-body {
-	background-image: url(/DentAssist/backgrounds/background.jpeg);
+.link_text{
+font-size: x-large;
+color: blue;
 }
-.header {
-	color: #FFF;
-	font-size: 36px;
-}
-.menu_main {
-	background-image: url(/DentAssist/backgrounds/background.jpeg);
-}
+
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Home</title>
 </head>
 <body>
-<table width="100%" border="0" cellspacing="3" cellpadding="3">
+  <table width="100%" border="0" cellspacing="3" cellpadding="3">
+    <tr>
+      <td width="2%" height="123"><img src="/DentAssist/backgrounds/logo.jpg" alt="" width="275" height="117" /></td>
+      <td><img src="/DentAssist/backgrounds/blue_banner.jpg" width="100%" height="170" /></td>
+    </tr>
+  </table>
+<table width="25%" border="0" cellspacing="3" cellpadding="12" align="center">
   <tr>
-    <td align="center" class="header">Welcome</td>
-  </tr>
-</table>
-<p>&nbsp;</p>
-<table width="50%" border="0" cellspacing="3" cellpadding="3" align="center">
-  <tr>
-    <td align="center"><a href="Patient_Details.jsp" class="header_link">Patients</a></td>
-    <td align="center"><a href="#" class="header_link">Scheduler</a></td>
-    <td align="center"><a href="#" class="header_link">Payments</a></td>
-    <td align="center"><a href="#" class="header_link">Reports</a></td>
+    <td align="justify"  class="header_link" width="20%" valign="top">&nbsp;&nbsp;&nbsp;&nbsp;<a href="Patient_Details.jsp" class="link_text">Patients</a></td>
+    <td align="justify"  class="header_link" width="20%" valign="top">&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="link_text">Appointments</a></td>
+    <td align="justify"  class="header_link" width="20%" valign="top">&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="link_text">Finance</a></td>
+    <td align="justify"  class="header_link" width="20%" valign="top">&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="link_text">Logout</a></td>
   </tr>
 </table>
 <p>&nbsp;</p>

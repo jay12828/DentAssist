@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Patients Home</title>
+<title>Patient Main Page</title>
 <style type="text/css">
 body{
 font-size: x-large;
@@ -29,7 +29,7 @@ font-weight: bold;
 #psdg-header {
 	margin:0;
 	padding: 14px 0 0 24px;
-	width: 1075px;
+	width: 90.8%;
 	height: 55px;
 	color:#FFF;
 	font-size:13px;
@@ -42,18 +42,8 @@ font-weight: bold;
 }
 
 </style>
-
-
 </head>
 <body>
-  <table width="100%" border="0" cellspacing="0" cellpadding="3">
-    <tr>
-      <td width="2%" height="123"><img src="/DentAssist/backgrounds/logo.jpg" alt="" width="275" height="117" /></td>
-      <td><img src="/DentAssist/backgrounds/blue_banner.jpg" width="100%" height="170" /></td>
-    </tr>
-  </table>
-<p></p>
-
 <div id="psdg-header">
 <span class="psdg-bold">Patient Record</span><br />
 List of all the patients
@@ -96,8 +86,5 @@ DBFunctions.createConnection().close();
 %>
 
 </table>
-<p></p>
-<p></p>
-<a href = "AddPatients.jsp" class="link_font" >Add New Patient</a>
 </body>
 </html>

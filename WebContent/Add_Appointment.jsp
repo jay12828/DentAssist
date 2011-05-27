@@ -233,10 +233,10 @@ calendar = {
 <style type="text/css">
 .calendar-box {
 	display:none;
-	background-color: #4CC552;
+	background-color: #99C2FF;
 	border:1px solid #444;
 	position:absolute;
-	width:350px;
+	width:260px;
 	padding: 0 5px;
 }
 .calendar-box select.calendar-month {
@@ -267,17 +267,19 @@ calendar = {
 	margin-left:-5px;
 	background-color:#c9ff8b;
 }
-body {
-	background-image: url(/DentAssist/backgrounds/background.jpeg);
-	color: white;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: x-large;
-}
+
 </style> 
 </head>
 <body>
+  <table width="100%" border="0" cellspacing="0" cellpadding="3">
+    <tr>
+      <td width="2%" height="123"><img src="/DentAssist/backgrounds/logo.jpg" alt="" width="275" height="117" /></td>
+      <td><img src="/DentAssist/backgrounds/blue_banner.jpg" width="100%" height="170" /></td>
+    </tr>
+  </table>
+<p></p>
 <form id="form1" name="form1" method="post" action="">
-<table width="50%" border="0" cellspacing="3" cellpadding="3">
+<table width="440px" border="0" cellspacing="3" cellpadding="3">
   <tr>
     <td>Appointment Date</td>
     <td>
