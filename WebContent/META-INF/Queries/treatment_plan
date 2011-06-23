@@ -1,0 +1,11 @@
+create table mine.plan_treatment (
+	plan_id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+	patient_id varchar(20),
+	proc_id integer,
+	plan_name varchar(100),
+	proc_name varchar(200),
+	surface varchar(100),
+	tooth_no integer,
+	proc_cost integer
+	
+);

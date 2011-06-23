@@ -97,7 +97,7 @@
       <td class="col_prop3">Home Phone</td>
       <td class="col_prop3"><label for="street_name"></label>
       <input type="text" name="street_name" id="street_name" value="<%= rs.getString(12) %>" /></td>
-      <td><a href ="Add_Appointment.jsp?pid=<%= patient_ID %>" class="link_font">Add Prescription</a></td>
+      <td><a href ="single_patient_treatment_plans.jsp?q=<%= patient_ID %>" class="link_font">View Treatment Plans</a></td>
       </tr>
       
       <tr><td class="col_prop">Last Name</td>
@@ -109,7 +109,7 @@
       <td class="col_prop3">Mobile</td>
       <td class="col_prop3"><label for="house_number"></label>
       <input type="text" name="house_number" id="house_number" value="<%= rs.getString(13) %>" /></td>
-      <td><a href ="Add_Appointment.jsp?pid=<%= patient_ID %>" class="link_font">Add Treatment</a></td></tr>
+      <td><a href ="treatment.jsp?pid=<%= patient_ID %>" class="link_font">Create Patient Chart</a></td></tr>
       <tr><td class="col_prop">Gender</td>
       <td class="col_prop"><label for="state"></label>
       <input type="text" name="gender" id="gender" value="<%= rs.getString(4) %>" /></td>

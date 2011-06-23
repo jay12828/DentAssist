@@ -1,3 +1,6 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.text.DateFormat"%>
+<%@page import="java.util.Date"%>
 <%@page import="Database_Functions.DBFunctions"%>
 <%@ page import="java.sql.*" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -6,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Add Appointment</title>
+<title>Appointments</title>
 <script>
 calendar = {
 	month_names: ["January","February","March","April","May","June","July","Augest","September","October","November","December"],
@@ -272,23 +275,12 @@ calendar = {
 #psdg-header {
 	margin:0;
 	padding: 14px 0 0 24px;
-	width: 415px;
+	width: 873px;
 	height: 55px;
 	color:#FFF;
 	font-size:13px;
 	background: #0c2c65 url(/DentAssist/backgrounds/head-bcg.jpg) no-repeat right top;	
 }
-
-#psdg-header-2 {
-	margin:0;
-	padding: 14px 0 0 24px;
-	width: 710px;
-	height: 55px;
-	color:#FFF;
-	font-size:13px;
-	background: #0c2c65 url(/DentAssist/backgrounds/head-bcg.jpg) no-repeat right top;	
-}
-
 .psdg-bold {
 	font: bold 22px Arial, Helvetica, sans-serif;
 	
@@ -298,7 +290,6 @@ body{
 font-size: 18px;
 color: black;
 }
-
 .table_prop{
 	padding-left: 15px;
 	background-color: #EBF5FF;
@@ -317,127 +308,51 @@ font-weight: bold;
 	color: black;
 	
 }
-
-.line_style{
-color: #f00;
-background-color: black;
-height: 1px;
+.date_filter{
+	background-color: white;
 }
-.link_text{
-	font-size: small;
+</style>
+<script>
+function getDate(){
+	var date_ap = document.getElementById("app_date").value;
+	window.location.href = "Appointments_Home.jsp?ad="+date_ap;
 }
-
-.link_text_vis{
-	font-size: small;
-	color: black;
-	display: none;
-}
-
-</style> 
-<script type="text/javascript">
-function changeClass(){
-	date_ap = document.getElementById("app_date").value;
-	window.location.href = "other_app.jsp?ad="+date_ap;
-}
-
 </script>
 </head>
-<body><% String pid = request.getParameter("pid"); %>
-  <table width="100%" border="0" cellspacing="0" cellpadding="3">
+<body><% String date_Filter = request.getParameter("ad"); %>
+<table width="100%" border="0" cellspacing="3" cellpadding="3">
     <tr>
       <td width="2%" height="123"><img src="/DentAssist/backgrounds/logo.jpg" alt="" width="275" height="117" /></td>
       <td><img src="/DentAssist/backgrounds/blue_banner.jpg" width="100%" height="170" /></td>
     </tr>
   </table>
-<p></p>
-
-
-
+  
+<hr class="line_style">
 
 <div id="psdg-header">
-<span class="psdg-bold">Add Appointment</span><br />
+<span class="psdg-bold">Your Patient Appointments (<%= date_Filter %>)</span>
 </div>
 
-
-<form id="form1" name="form1" method="post" action="appointment.set?q=<%= pid %>" >
-<table width="440px" border="0" cellspacing="0" cellpadding="3" class="table_prop" >
-  <tr>
-    <td>Appointment Date</td>
-    <td>
-      <label for="app_date"></label>
-      <input type="text" name="app_date" id="app_date" /><br />
-     <script type="text/javascript">
- 		calendar.set("app_date");
- 	  </script>
- 	  <a href="javascript:changeClass()" class="link_text" id="mylink" name ="my_link">See other appointments for this date</a>
-    </td>
-  </tr>
-  <tr>
-    <td>Time</td>
-    <td><label for="app_time_hr"></label>
-      <select name="app_time_hr" id="app_time_hr">
-  		<option value="1">1</option>
-  		<option value="2">2</option>
-  		<option value="3">3</option>
-  		<option value="4">4</option>
-  		<option value="5">5</option>
-  		<option value="6">6</option>
-  		<option value="7">7</option>
-  		<option value="8">8</option>
-  		<option value="9">9</option>
-  		<option value="10">10</option>
-  		<option value="11">11</option>
-  		<option value="12">12</option>
-      </select>
-      
-      <select name="app_time_min" id="app_time_min">
-      	<option value="00">00</option>
-  		<option value="30">30</option>
-      </select>
-      
-      <select name="am_pm" id="am_pm">
-      	<option value="am">AM</option>
-  		<option value="pm">PM</option>
-      </select></td>
-     
-      
-  </tr>
-  <tr>
-    <td>Treatment Quick Glance</td>
-    <td><label for="q_treat"></label>
-      <select name="q_treat" id="q_treat">
-      	<option value="Restorative">Restorative</option>
-  		<option value="Surgical">Surgical</option>
-  		<option value="Oral Prophylaxis">Oral Prophylaxis</option>
-  		<option value="General Checkup">General Checkup</option>
-      </select></td>
-  </tr>
-<tr><td><input type="submit" name="sub_app" id="sub_app" value="Set Appointment" /></td></tr>
-</table>
-</form>
-<hr class="line_style">
-<div id="psdg-header-2">
-<span class="psdg-bold">Other Appointments for this patient</span>
-</div>
 <table border="0" cellspacing="0" cellpadding="18">
 <tr class="table_header" >
 	<td>Appointment ID</td>
+	<td>Name</td>
 	<td>Appointment Date</td>
 	<td>Appointment Time</td>
 	<td>Treatment at a Glance</td>
-</tr>
+	</tr>
 <% 
    Statement stmt = null;	
    stmt = DBFunctions.createConnection().createStatement();
-   ResultSet rs = stmt.executeQuery("select app_id, appointment_date, appointment_time, treatment_summary from mine.Appointments where patient_id='"+pid+"'");
+   ResultSet rs = stmt.executeQuery("select app_id, FIRST_NAME, LAST_NAME, APPOINTMENT_DATE, APPOINTMENT_TIME, treatment_summary from MINE.APPOINTMENTS, MINE.PATIENTS_DETAILS where MINE.APPOINTMENTS.PATIENT_ID=MINE.PATIENTS_DETAILS.PATIENT_ID and APPOINTMENT_DATE='"+date_Filter+"'");
    while(rs.next()){
 %>
 <tr class = "other_row">
 <td><a class = 'link_font' href ='Patients.find?pid=<%= rs.getString(1) %>' ><%= rs.getString(1) %></a></td>
-<td><%= rs.getString(2) %></td>
-<td><%= rs.getString(3) %></td>
+<td><%= rs.getString(2) %> <%= rs.getString(3) %></td>
 <td><%= rs.getString(4) %></td>
-
+<td><%= rs.getString(5) %></td>
+<td><%= rs.getString(6) %></td>
 <% } %>
 
 <% rs.close();
@@ -446,7 +361,16 @@ DBFunctions.createConnection().close();
 
 %>
 
-</table>
-
+</table>  
+<table align="left">
+<tr>
+<td class="date_filter" align="left">See Appointments For:</td>
+	<td><input type="text" name="app_date" id="app_date" /><br />
+     <script type="text/javascript">
+ 		calendar.set("app_date");
+ 	  </script></td>
+ 	  <td><input type="button" name="srch" value="Find" onclick="getDate()"></td>
+</tr>
+</table>  
 </body>
 </html>

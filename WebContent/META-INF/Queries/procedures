@@ -1,0 +1,9 @@
+create table mine.tblprocedure (
+	proc_id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+	proc_name varchar(220),
+	proc_cost integer
+);
+
+insert into TBLPROCEDURE(proc_name, proc_cost) values ('Crown-Porcelain/Ceramic Substrate',1800)
+
+select * from TBLPROCEDURE

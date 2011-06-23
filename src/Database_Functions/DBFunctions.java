@@ -85,6 +85,87 @@ public class DBFunctions {
         }
     }
     
+    public static void addAppointment(Statement stmt,String app_id, String patient_id, String appointment_date, String appointment_time, String treatment_summary){
+    	try
+        {
+        	String query = "insert into MINE.APPOINTMENTS(app_id,patient_id,appointment_date,appointment_time,treatment_summary) values('"+app_id+"','"+patient_id+"','"+appointment_date+"','"+appointment_time+"','"+treatment_summary+"')";
+       
+            stmt.execute(query);
+            stmt.close();
+        }
+        catch (SQLException sqlExcept)
+        {
+            sqlExcept.printStackTrace();
+        }
+    }
+    
+    public static int getProcID(Statement stmt, String procName){
+    	int procID = 0;
+    	try
+        {
+        	String query = "select proc_id from mine.tblprocedure where proc_name='"+procName+"'";
+       
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next()){
+            	procID = rs.getInt(1);
+            }
+           // stmt.close();
+        }
+        catch (SQLException sqlExcept)
+        {
+            sqlExcept.printStackTrace();
+        }
+		return procID;
+    	
+    }
+    
+    public static int getProcCost(Statement stmt, int procID){
+    	int procCost = 0;
+    	try
+        {
+        	String query = "select proc_cost from mine.tblprocedure where proc_id="+procID;
+       
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next()){
+            	procCost = rs.getInt(1);
+            }
+           // stmt.close();
+        }
+        catch (SQLException sqlExcept)
+        {
+            sqlExcept.printStackTrace();
+        }
+		return procCost;
+    	
+    }
+    
+    public static void insertPLan(Statement stmt, String Patient_ID, int proc_id, String Plan_Name, String proc_name, String Surface, int tooth_num, int proc_cost, String Status){
+    	try
+        {
+        	String query = "insert into MINE.TREATMENT_PLAN(patient_id,proc_id,plan_name,proc_name,surface,tooth_no,proc_cost,Status) values('"+Patient_ID+"',"+proc_id+",'"+Plan_Name+"','"+proc_name+"','"+Surface+"',"+tooth_num+","+ proc_cost+",'"+Status+"')";
+       
+            stmt.execute(query);
+            stmt.close();
+        }
+        catch (SQLException sqlExcept)
+        {
+            sqlExcept.printStackTrace();
+        }
+    }
+    
+    public static void addProcedure(Statement stmt,String proc_name, int proc_cost){
+    	try
+        {
+        	String query = "insert into mine.tblprocedure(proc_name,proc_cost) values('"+proc_name+"',"+proc_cost+")";
+       
+            stmt.execute(query);
+            stmt.close();
+        }
+        catch (SQLException sqlExcept)
+        {
+            sqlExcept.printStackTrace();
+        }
+    }
     
     public static void shutdown()
     {

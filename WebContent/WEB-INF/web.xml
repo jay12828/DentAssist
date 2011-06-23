@@ -41,4 +41,36 @@
     <servlet-name>deletePatients</servlet-name>
     <url-pattern>/DeletePatient.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>addAppointment</servlet-name>
+    <servlet-class>Servlets.Appointment.appointment</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addAppointment</servlet-name>
+    <url-pattern>/appointment.set</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>addTreatment</servlet-name>
+    <servlet-class>Servlets.Treatment.treatment</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addTreatment</servlet-name>
+    <url-pattern>/treatment.enter</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>addPlan</servlet-name>
+    <servlet-class>Servlets.Treatment.treatmentPlan</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addPlan</servlet-name>
+    <url-pattern>/treat.plan</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <servlet-name>addProcedure</servlet-name>
+    <servlet-class>Servlets.Treatment.procedure</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addProcedure</servlet-name>
+    <url-pattern>/proc.add</url-pattern>
+  </servlet-mapping>
 </web-app>
