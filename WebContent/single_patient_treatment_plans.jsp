@@ -11,7 +11,7 @@
 #psdg-header {
 	margin:0;
 	padding: 10px 0 0 10px;
-	width: 219px;
+	width: 25.8%;
 	height: 45px;
 	color:#FFF;
 	font-size:13px;
@@ -63,16 +63,20 @@ font-weight: bold;
 <tr class="table_header" >
 	<td>Plan Name</td>
 	<td>No. of Treatments</td>
+	<td>Status</td>
+	<td></td>
 </tr>
 <% 
    Statement stmt = null;	
    stmt = DBFunctions.createConnection().createStatement();
-   ResultSet rs = stmt.executeQuery("select plan_name, count(plan_name) from mine.TREATMENT_PLAN where patient_id='" + pid + "' group by plan_name ");
+   ResultSet rs = stmt.executeQuery("select plan_name, count(plan_name),status,tooth_no from mine.TREATMENT_PLAN where patient_id='" + pid + "' group by plan_name,status,tooth_no");
    while(rs.next()){
 %>
 <tr class = "other_row">
 <td><a class = 'link_font' href ='Plan_details.jsp?pname=<%= rs.getString(1) %>&pid=<%= pid %>' ><%= rs.getString(1) %></a></td>
 <td><%= rs.getString(2) %></td>
+<td><%= rs.getString(3) %></td>
+<td><a href='treatmentEdit.jsp?pname=<%= rs.getString(1) %>&pid=<%= pid %>&tno=<%= rs.getString(4) %>'>Edit Plan</a></td>
 
 <% } %>
 

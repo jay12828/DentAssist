@@ -66,6 +66,14 @@
     <url-pattern>/treat.plan</url-pattern>
   </servlet-mapping>
     <servlet>
+    <servlet-name>editPlan</servlet-name>
+    <servlet-class>Servlets.Treatment.treatmentPlan</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>editPlan</servlet-name>
+    <url-pattern>/treatedit.plan</url-pattern>
+  </servlet-mapping>
+    <servlet>
     <servlet-name>addProcedure</servlet-name>
     <servlet-class>Servlets.Treatment.procedure</servlet-class>
   </servlet>

@@ -29,7 +29,7 @@ font-weight: bold;
 #psdg-header {
 	margin:0;
 	padding: 14px 0 0 24px;
-	width: 1086px;
+	width: 1075px;
 	height: 55px;
 	color:#FFF;
 	font-size:13px;

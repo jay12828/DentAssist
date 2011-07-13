@@ -275,7 +275,7 @@ calendar = {
 #psdg-header {
 	margin:0;
 	padding: 14px 0 0 24px;
-	width: 873px;
+	width: 61.35%;
 	height: 55px;
 	color:#FFF;
 	font-size:13px;
